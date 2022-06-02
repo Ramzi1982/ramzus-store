@@ -3,6 +3,7 @@
     margin-left: auto;
    font-size: 20px;
    
+   
   
    
   }
@@ -23,8 +24,9 @@
      margin: 15%;
  }
 .about{
-    margin: 35%;
+    margin: 16%;
 }
+
  .products{
      width: 100%;
      min-height: 80vh;
@@ -57,7 +59,9 @@
 
 
 
- * {box-sizing: border-box;}
+ * {box-sizing: border-box;
+
+}
 
 input[type=text], select, textarea {
   width: 100%;
@@ -84,12 +88,18 @@ input[type=submit]:hover {
 }
 
 .container-form {
-  border-radius: 5px;
-  background-color: rgb(191, 191, 209);
-  padding: 50px;
+border-radius: 2.25rem;
+border-color: rgb(235, 65, 65);
+background-color: rgb(191, 191, 209);
+ padding: 50px;
+ margin: 5%;
 }
 
 .contact{
     margin-top: revert;
     margin-left: 40%;
+}
+.img-contact{
+  padding-left: 10%;
+  
 }

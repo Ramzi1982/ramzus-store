@@ -6,10 +6,12 @@ import "../App.css";
 const Products = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
-  const [filter, setFilter] = useState();
+  const [filter, setFilter] = useState([]);
 
   useEffect(() => {
+
     setLoading(true);
+    
     axios({
       method: "GET",
       url: "https://fakestoreapi.com/products",
@@ -25,7 +27,9 @@ const Products = () => {
   }, []);
 
   const filterProduct = (cat) => {
-    const updateCategory = data.filter((e) => e.category === cat);
+    const updateCategory = data.filter((e) => e.category === cat)
+    filter.push(updateCategory)
+    // ;
     setFilter(updateCategory);
     console.log(filter);
   };
@@ -55,13 +59,13 @@ const Products = () => {
         </button>
         <button
           className="btn btn-outline-dark me-2"
-          onClick={() => filterProduct("men's Clothing")}
+          onClick={() => filterProduct("men's clothing")}
         >
           Men's Clothing
         </button>
         <button
           className="btn btn-outline-dark me-2"
-          onClick={() => filterProduct("women's Clothing")}
+          onClick={() => filterProduct("women's clothing")}
         >
           Women's Clothing
         </button>
@@ -73,7 +77,7 @@ const Products = () => {
         </button>
         <button
           className="btn btn-outline-dark me-2"
-          onClick={() => filterProduct("electronic")}
+          onClick={() => filterProduct("electronics")}
         >
           Electronic
         </button>
@@ -89,7 +93,9 @@ const Products = () => {
       
 
        
-        {data.map((product) => (
+      
+
+        {filter.map((product) => (
           <div key={product.id} className="product-card">
             <div>
               <img src={product.image} alt="#" className="product-img" />

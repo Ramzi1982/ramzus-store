@@ -3,15 +3,21 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addCart } from "../redux/actions";
+import Cart from "./Cart";
 
 const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
 
+
 const dispatch = useDispatch();
+
 const addProduct =(product)=>{
     dispatch(addCart(product));
+    console.log(addCart);
+
+
 }
 
 

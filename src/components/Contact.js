@@ -1,13 +1,15 @@
 import React from "react";
-
+import contact from '../images/contact.jpg'
 
 const ContactForm = () => {
   return (
     <div>
-      <h3 className="contact">Contact Form</h3>
-      <div className="container-form">
+     
+      <div className="container-form" >
+      
         <form className="form-container">
-          <label for="fname">First Name</label>
+       
+          <label htmlFor="fname">First Name</label>
           <input
             type="text"
             id="fname"
@@ -15,7 +17,7 @@ const ContactForm = () => {
             placeholder="Your name.."
           />
 
-          <label for="lname">Last Name</label>
+          <label htmlFor="lname">Last Name</label>
           <input
             type="text"
             id="lname"
@@ -23,7 +25,7 @@ const ContactForm = () => {
             placeholder="Your last name.."
           />
 
-          <label for="subject">Subject</label>
+          <label htmlFor="subject">Subject</label>
           <textarea
             id="subject"
             name="subject"
@@ -31,8 +33,11 @@ const ContactForm = () => {
           ></textarea>
 
           <input type="submit" value="Submit" />
+          
         </form>
+        <img className="img-contact"    src={contact}alt="Card image"  height={"800px"}/>
       </div>
+     
     </div>
   );
 };
